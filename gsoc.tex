@@ -1,0 +1,134 @@
+% rubber: bibtex.path /home/lagrange/Documents/UNDOCUMENTS/gsoc/2021/proposal
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=false,
+    hidelinks=true
+}
+\bibliographystyle{plain} % FIXME: styles are not found
+
+\newcommand{\fft}{\textsc{fft}}
+\newcommand{\dft}{\textsc{dft}}
+\newcommand{\gsoc}{\textsc{gsoc}}
+\newcommand{\ntt}{\textsc{ntt}}
+\newcommand{\mpi}{\textsc{mpi}}
+\newcommand{\raii}{\textsc{raii}}
+\newcommand{\api}{\textsc{api}}
+\newcommand{\boost}{\textit{Boost}}
+\newcommand{\boostmath}{\textit{Boost.Math}}
+\newcommand{\boostmpi}{\textit{Boost.MPI}}
+\newcommand{\fftw}{\textit{FFTW}}
+\newcommand{\cufft}{\textit{CUFFT}}
+\newcommand{\gcc}{\textit{GCC}}
+\newcommand{\gnu}{\textit{GNU}}
+
+\newcommand{\Ring}{\mathcal{R}}
+\newcommand{\Order}{\mathcal{O}}
+\newcommand{\Complex}{\mathbb{C}}
+\newcommand{\Real}{\mathbb{R}}
+\newcommand{\Integer}{\mathbb{Z}}
+\newcommand{\xroot}[1]{$#1^{\mathrm{th}}$-root}
+
+\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}
+
+\title{\gsoc\ 2021\\\boostmath: \fft\ Utilities}
+\author{Eduardo Quintana Miranda}
+
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\input intro
+\input state
+\input proposal
+\input schedule
+    
+\bibliography{biblio}
+
+\appendix
+\input app_ring
+\input info
+
+\end{document}
+
+Elements of a Quality Proposal
+
+Most organizations have their own proposal guidelines or templates. You should
+be extraordinarily careful to conform to these. Most organizations have many,
+many proposals to review. Failure to follow simple instructions is highly likely
+to land you at the bottom of the heap.
+
+There are certain elements of the proposal that should apply to every
+organization. Proper attention to these elements will greatly improve your
+chances of a successful proposal.
+
+Name and Contact Information
+
+Putting your full name on the proposal is not enough. Provide full contact
+information, including email addresses, websites, IRC nick, and telephone
+number.
+
+Title
+
+Your title should be short, clear and interesting. The job of the title is to
+convince the reviewer to read your synopsis.
+
+Synopsis
+
+If the format allows, start your proposal with a short summary, designed to
+convince the reviewer to read the rest of the proposal.
+
+Benefits to Community
+
+Don’t forget to make your case for a benefit to the organization, not just to
+yourself. Why would Google and your organization be proud to sponsor this work?
+How would open source or society as a whole benefit? What cool things would be
+demonstrated?
+
+Deliverables
+
+Include a brief, clear work breakdown structure with milestones and deadlines.
+Make sure to label deliverables as optional or required. You may want your plan
+to start by producing some kind of white paper, or planning the project in
+traditional Software Engineering style. It’s OK to include thinking time
+(“investigation”) in your work schedule. Deliverables should include
+investigation, coding and documentation.
+
+Related Work
+
+You should understand and communicate other people’s work that may be related to
+your own. Do your research, and make sure you understand how the project you are
+proposing fits into the target organization. Be sure to explain how the proposed
+work is different from similar related work.
+
+Biographical Information
+
+Keep your personal info brief. Be sure to communicate personal experiences and
+skills that might be relevant to the project. Summarize your education, work,
+and open source experience. List your skills and give evidence of your
+qualifications. Convince your organization that you can do the work. Any
+published work, successful open source projects and the like should definitely
+be mentioned.
+
+Follow the Rules
+
+Most organizations accept only plain text applications. Most organizations have
+a required application format. Many organizations have application length
+limits. In general, organizations will throw out your proposal if you fail to
+conform to these guidelines. If you feel you must have graphical or interactive
+content associated with your application, put just this content (not a copy of
+your proposal) on the web and provide an easy-to-type URL. Do not expect
+reviewers to follow this link.
+
+

@@ -1,0 +1,30 @@
+\section{Proposal}
+
+This project proposes the implementation, with C++ templates, of well-known
+\fft\ algorithms to solve the \dft\ problem as presented in the Definition
+\ref{def:dft}, for any data type that satisfies the ring axioms. 
+These routines will be integrated within \boostmath\ library.
+
+\subsection{Deliverables}
+
+This project proposes to deliver at the end of the \gsoc-2021 a C++ library for
+computing \fft{}s, with the following components:
+\begin{itemize}
+    \item template routines for computing \dft,
+    \item template routines for computing convolutions,
+    \item optimized specialization for complex to complex \dft,
+    \item optimized specialization for real to complex \dft,
+    \item support for $D$-dimensional \dft{}s,
+    \item unit tests and benchmarks,
+    \item documentation with examples,
+    \item (if time permits) wrappers for some \fftw\ routines,
+    \item (if time permits) with multithreaded capabilities.
+\end{itemize}
+
+\subsection{Future outlook}
+If this project is successful we will consider for next year 
+implementing parallel distributed memory
+$D$-dimensional \dft\ 
+using a scalable $(D-1)$-dimensional domain decomposition,
+similar to that proposed by \cite{pippig_13}, built on top of the \boostmpi\ library
+and the 1-dimensional \fft\ utilities of \boostmath\ to be developed this year.

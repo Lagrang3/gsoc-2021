@@ -1,0 +1,146 @@
+\section{Application Questionnaire}
+
+\subsection*{Personal details}
+
+\begin{tabular}{ll} 
+    Name:& Eduardo Quintana Miranda\\ 
+    Affiliation:& University of Trieste, Astronomical Observatory of Trieste\\
+    Course:& Astrophysics \\
+    Degree Program:& PhD \\ 
+    E-mail:& \url{eduardo.quintana@pm.me} \\ 
+    Github:& \url{github.com/Lagrang3} 
+\end{tabular}
+
+\subsection*{Availability}
+
+\subsubsection*{Q. How much time do you plan to spend on your GSoC?} 
+I think that
+25 hours a week for the whole duration of the event will fit for the objectives
+set forth on this project.
+
+\subsubsection*{Q. What are your intended start and end dates?} 
+I intend to follow
+the official timeline, ie. to work continuously from June 7th until August 16th.
+However, it is very likely that I will be working on the project even before
+that date on discrete time slots starting from April the 1st.
+
+\subsubsection*{Q. What other factors affect your availability?} 
+The progress on
+the PhD project in which I am involved is an important factor that could limit
+my availability.
+
+\subsection*{Background Information}
+
+\subsubsection*{Q. Please summarize your educational background.}
+
+\begin{itemize} 
+    \item 2008--2013. BSc. Nuclear Physics, University of Havana,
+    \item 2015--2018. MSc. Theoretical Physics, University of Trieste, 
+    \item
+    2018--2019. Master in High Performance Computing, International School of
+    Advanced Studies (SISSA), Trieste, 
+    \item 2019--present. PhD in astrophysics,
+    University of Trieste.  
+\end{itemize}
+
+\subsubsection*{Q. Please summarize your programming background.} 
+My main
+programming language is C++.
+
+I started programming back in 2009 during my 2nd year of BSc.  The main drivers
+were physics simulations and programming competitions.  From 2009 until 2013
+I've participated intensively in those kind of competitions, 
+the most important were the
+ACM-ICPC\footnote{\url{icpc.global}} competitions held every year, my team
+managed to classify many times to the regional phase, which in our geographical
+context where named \emph{Caribbean Finals of the ICPC}.  Until this date I
+participate once in a while on codeforces\footnote{\url{codeforces.com}} rounds.
+I have a fair knowledge of a variety of classical algorithms somewhat seasoned
+by my participation on programming competitions.
+
+I've acquired some professional programming skills during the Master in High
+Performance Computing. Advanced C++, python, bash, git, and parallel programming
+in OpenMP, MPI and Cuda where among the topics taught in that curriculum.
+
+I've read Stroustrup's \emph{The C++ Programming Language} 2nd Ed.  and I am
+currently going through Josutti's \emph{C++17 The Complete Guide}.
+
+I use C++ on a daily basis for my research. 
+
+
+\subsubsection*{Q. Please tell us a little about your programming interests. Please
+tell us why you are interested in contributing to the \boost\ C++ Libraries.} 
+For
+my PhD research I am developing a library for a very specific task, which is the
+Particle-Mesh (PM) component for cosmological N-body simulations that will
+include the effects of general relativity on the formation of large scale
+structures---ie. clusters of galaxies, voids, filaments, etc. I use \boost\
+Libraries for this work, in particular the MPI and Unit Test Framework. That
+means some of my interest comes from professional needs.  But besides that, I am
+interested in programming for passion.
+
+
+\subsubsection*{Q. What is your interest in the project you are proposing?} 
+Most of
+the PM code, in which I am working on, involves performing parallel multiprocess
+\fft{}s on a discrete representations of fields---eg. density---in a cubic box. At
+its current state, the code has two major programming issues: 
+\begin{enumerate}
+    \item it uses \fftw\ to perform 1-dimensional \fft{}s calling C style routines, 
+    consequently the internal datatype for the field's Fourier transform is 
+    \verb|fftw_complex|, an alias for \verb|double[2]|, which lacks of the
+    algebraic semantics that \verb|std::complex<double>| has;
+    \item while the parallelization of the 3-dimensional transform is done by
+    handcrafted
+    routines because \fftw's algorithm does not scale well with the number of MPI
+    processes.  
+\end{enumerate} 
+The project I am proposing would solve the first
+issue, and my feeling is that it won't take long until we can implement scalable
+$D$-dimensional \fft{}s within \boostmpi\ library using the resulting code from this
+effort.
+
+\subsubsection*{Q. Have you done any previous work in this area before or on similar
+projects?}
+Yes. One of the courses taken at the Master in High Performance Computing dealt
+with Fast Fourier Transforms. And for the final exam we had to implement a
+parallel 3-dimensional \fft\ and compare its performance against
+\fftw\footnote{\url{https://github.com/Lagrang3/P2.16_Parallel_FFT/tree/master/solution}}.
+
+\subsubsection*{Q. What are your plans beyond this Summer of Code time frame for your
+proposed work?} 
+If this project's idea is well received, I will continue working on it beyond
+this year's \gsoc. I would like to have these \fft\ capabilities in the
+upcomming \boost\ releases and become a regular maintainer of the code.
+Like I said before, I have plans to continue working on it at least to the point
+of having distributed memory \fft\ implemented.
+
+\subsubsection*{Q. Please rate, from 0 to 5 (0 being no experience, 5 being expert),
+your knowledge of the following languages, technologies, or tools:}
+\begin{itemize} 
+    \item C++ 98/03 (traditional C++): 4 
+    \item C++ 11/14 (modern C++): 4 
+    \item C++ Standard Library: 4 
+    \item Boost C++ Libraries: 3 
+    \item Git: 3
+\end{itemize}
+
+\subsubsection*{Q. What software development environments are you most familiar with?}
+My software development environment consists of two bash terminals on \gnu/Linux
+operating system, side
+by side.  In one terminal I write code with \texttt{vim} editor and in the other I
+compile and execute. I mostly use the \gcc\ compilers and
+\texttt{make}\footnote{\url{www.gnu.org/software/make}} or
+\texttt{meson}\footnote{\url{mesonbuild.com}} for building.
+
+\subsubsection*{Q. What software documentation tool are you most familiar with?} 
+I hate Doxygen-produced documentation.  Though I consider software documentation
+of utter importance, and I often start writting the manuals and such even before
+the code itself. In the repositories I maintain, besides \emph{readme}s in
+markdown I like to include tex manuscripts to produce human-made
+documentation.
+
+\subsection*{Programming Competency}
+About a year ago I started working on a prototype for this \fft\ library.
+The code is publicly available at \url{github.com/Lagrang3/fftx}.
+

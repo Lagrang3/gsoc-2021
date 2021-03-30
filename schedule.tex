@@ -1,0 +1,178 @@
+\section{Timeline}
+
+    \subsection*{Before June 7}
+    Familiarize myself with \boostmath\ library, its coding standards and
+    requirements for new utilities.
+    Familiarize myself with \fftw\ library, its API and inner workings.
+    Do some research about the state of the art algorithms for computing \fft.
+    
+    \subsection*{June 7 -- June 13 (Official Coding Time begins)}
+    Define a template API for the \fft\ library.
+    Prepare a set of tests for correctedness.
+    Prepare a set of benchmarks to test performance.
+    Implement, test and document an abstract
+    \fft\ using multi-radix Good-Thomas \cite{FFTW05}
+    algorithm (most general method). 
+     
+    
+    \subsection*{June 14 -- June 20}
+    Write a routine for computing convolutions using \fft.
+    Implement, test and document a
+    complex-to-complex \fft\ using Rader's algorithm \cite{rader68}.
+    
+    \subsection*{June 21 -- June 27}
+    Implement Winograd's \fft\ \cite{winograd78} as a generalization of Rader's
+    and check if there is a gain in performance for certain \fft\ sizes.
+    Implement, test and document a
+    complex-to-complex \fft\ using Bluestein's algorithm \cite{bluestein70} and check if there is a
+    gain in performance for certain \fft\ sizes.
+    
+    
+    \subsection*{June 28 -- July 04}
+    Implement, test and document
+    real-to-complex and complex-to-real 
+    \fft's algorithms discussed in \cite{FFTW05,soresen87}.
+    
+    \subsection*{July 05 -- July 11}
+    Buffer time before the first evaluation date
+    to solve any pending issues.
+    
+    \subsection*{July 12 -- July 18}
+    Benchmark the \fft\ utilities produced in the preceding weeks against \fftw,
+    Alglib and GSL libraries\footnote{\url{https://www.alglib.net/}}.
+    Explore other algorithms and techniques, for instance \fftw\
+    codelets.
+    
+    \subsection*{July 19 -- July 25}
+    Implement a wrapper to \fftw\ libraries. 
+    Specialize the template \fft\ to call FFTW when the required type of
+    transform can be handled by FFTW's API,
+    eg. single/double precission complex to complex, or single/double
+    precission real to complex.
+    
+    \subsection*{July 26 -- August 1}
+    Document the work done. Produce some examples for the most common \fft\
+    cases as well as some cases when FFTW cannot be used and templated
+    Cooley-Tukey is called instead.
+    Implement, test and document, $D$-dimensional \fft\ using the 1-dimensional
+    functionality produced in the previous weeks.
+    
+    \subsection*{August 2 -- August 8}
+    Implement, test and document, some multi-threading capabilities.
+    
+    \subsection*{August 9 -- August 15}
+    Buffer time before the last evaluation date
+    to solve any pending issues.
+   
+%    Proposal Timeline
+% 
+% Before April 20:
+% 
+%     To familiarize myself completely with Mailman2’s functionality and
+%     architecture.  Study of the customized files of Systers Mailman available
+%     in the Launchpad Baazar version control.  To familiarize myself with
+%     Storm(ORM that we will be using)
+% 
+% April 20 – May 23 (Before the official coding time):
+% 
+%     To do self coding with Storm to improve my further understanding and ease
+%     of use with this ORM and database(PostgreSQL) During this period I will
+%     remain in constant touch with my mentor and the Mailman community. I will
+%     remain active on IRC and Mailing lists to discuss and finalize on the
+%     modifications (if any) that needs to be on existing schemas and design of
+%     new schemas (if needed to fit cleanly with Mailman3’s Architecture) Thus
+%     with the help of my mentor I will become absolutely clear about my future
+%     goals,the final database implementations that need to be done as well as
+%     the approach that I will follow to map the schemas to the Object Oriented
+%     Paradigm.
+% 
+% May 23 – June 18 (Official coding period starts):
+% 
+%     Define all the required Relations(Tables) in my local database using
+%     STORM.  Define all the corresponding Python Classes and Objects that will
+%     store,modify and retrieve data in database.  Define all the interactions
+%     that Systers perform with their database (virtualize or stimulate all
+%     interactions) in STORM that will deal with my local database.
+% 
+% This will help in testing of the proper working of the entire basic code
+% changes that we will later on incorporate in Systers Source code.
+% 
+% June 18 – July 5:
+% 
+%     Bringing about the decided changes in the Relational Schemas of Systers
+%     database.  Replacing parts of the above code in their respective places in
+%     the Systers source code. (This should not take much time as most of the
+%     functionality has been implemented in the previous step).  Testing the
+%     overall working of each and every module of the modified source code with
+%     the help of Python Test Suites.
+% 
+% JULY 6th MID TERM EVALUATION
+% 
+% July 6 – July 15:
+% 
+%     Making further changes in the code to improve the Functionality, Exception
+%     handling, Bug Removal.
+% 
+% July 15 – July 25:
+% 
+%     To be in constant touch with the Mailman3’s developers and to let them
+%     know about our progress.  Most of the time will be consumed for rigorous
+%     testing and bug fixes.
+% 
+% July 25 – July 31:
+% 
+%     For Documentation
+% 
+% A buffer of two weeks has been kept for any unpredictable delay.
+
+
+% Timeline
+% 
+% This week-by-week timeline provides a rough guideline of how the project will
+% be done.
+% 
+% 3 – 16 May
+% 
+% Familiarize with the code and the community, the version control system, the
+% documentation and test system used, and the new Reactome version.
+% 
+% 17 – 30 May
+% 
+% Write the Reactome XML layout schema and the command line Reactome XML to GPML
+% converter, keeping in mind that the internals are to be used subsequently as a
+% library.
+% 
+% 31 May – 6 June
+% 
+% Test and document existing code more thoroughly.
+% 
+% 7 – 20 June
+% 
+% Determine algorithms used to convert GPML graphical representations to
+% Reactome XML. Then, write the command line GPML to Reactome converter, keeping
+% in mind that the internals are to be used subsequently as a library.
+% 
+% 21 – 27 June
+% 
+% Test and document the GPML to Reactome XML converter and the heuristic
+% algorithm more thoroughly.
+% 
+% 28 June – 11 July
+% 
+% Ensure that round-trip conversion works flawlessly (i.e. no data is lost when
+% converting GPML to Reactome XML to GPML again, and vice versa). Also test and
+% document round-trip conversions.
+% 
+% 12 – 25 July
+% 
+% Integrate the converters to WikiPathways. A system that periodically check for
+% updates on both WikiPathways and Reactome and update the websites accordingly
+% is written.
+% 
+% 26 July – 1 August
+% 
+% Test and document the periodic push/pull mechanism more thoroughly.
+% 
+% 2 – 16 August
+% 
+% Further refine tests and documentation for the whole project.
