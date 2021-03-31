@@ -1,3 +1,5 @@
+
+\penalty -10000
 \section{Timeline}
 
     \subsection*{Before June 7}
@@ -7,63 +9,56 @@
     Do some research about the state of the art algorithms for computing \fft.
     
     \subsection*{June 7 -- June 13 (Official Coding Time begins)}
-    Define a template API for the \fft\ library.
+    Define a template API for the library.
     Prepare a set of tests for correctedness.
-    Prepare a set of benchmarks to test performance.
-    Implement, test and document an abstract
-    \fft\ using multi-radix Good-Thomas \cite{FFTW05}
-    algorithm (most general method). 
+    Prepare a set of benchmarks to test performance against \fftw,
+    \gsl\footnote{\url{www.gnu.org/software/gsl}} and
+    \alglib\footnote{\url{www.alglib.net}}.
      
     
     \subsection*{June 14 -- June 20}
-    Write a routine for computing convolutions using \fft.
-    Implement, test and document a
-    complex-to-complex \fft\ using Rader's algorithm \cite{rader68}.
+    Implement Good-Thomas \fft\ algorithm (see \cite{FFTW05}), the general
+    mixed-radix \dft\ and Cooley-Tukey's, the specialization for powers of 2 sizes.
     
     \subsection*{June 21 -- June 27}
-    Implement Winograd's \fft\ \cite{winograd78} as a generalization of Rader's
-    and check if there is a gain in performance for certain \fft\ sizes.
-    Implement, test and document a
-    complex-to-complex \fft\ using Bluestein's algorithm \cite{bluestein70} and check if there is a
-    gain in performance for certain \fft\ sizes.
-    
+    Implement convolution routines and 
+    real to complex transforms (see \cite{FFTW05,soresen87}).
     
     \subsection*{June 28 -- July 04}
-    Implement, test and document
-    real-to-complex and complex-to-real 
-    \fft's algorithms discussed in \cite{FFTW05,soresen87}.
+    Implement Rader's \fft\ algorithm (see \cite{rader68}), the specialization for prime sizes (it
+    needs the convolution routines).
+    %Implement Winograd's \fft\ algorithm (see \cite{winograd78}), 
+    %a generalization of Rader's for prime
+    %power sizes. 
+    %Check if there is any gain in performace from using Winograd's
+    %instead of Rader's or Good-Thomas algorithm.
     
     \subsection*{July 05 -- July 11}
     Buffer time before the first evaluation date
     to solve any pending issues.
     
     \subsection*{July 12 -- July 18}
-    Benchmark the \fft\ utilities produced in the preceding weeks against \fftw,
-    Alglib and GSL libraries\footnote{\url{https://www.alglib.net/}}.
     Explore other algorithms and techniques, for instance \fftw\
-    codelets.
+    codelets and Bluestein's \fft\ (see~\cite{bluestein70}).
     
     \subsection*{July 19 -- July 25}
-    Implement a wrapper to \fftw\ libraries. 
-    Specialize the template \fft\ to call FFTW when the required type of
-    transform can be handled by FFTW's API,
-    eg. single/double precission complex to complex, or single/double
-    precission real to complex.
-    
-    \subsection*{July 26 -- August 1}
-    Document the work done. Produce some examples for the most common \fft\
-    cases as well as some cases when FFTW cannot be used and templated
-    Cooley-Tukey is called instead.
-    Implement, test and document, $D$-dimensional \fft\ using the 1-dimensional
+    Implement $D$-dimensional \fft\ using the 1-dimensional
     functionality produced in the previous weeks.
     
+    \subsection*{July 26 -- August 1}
+    Implement a simple wrapper for \fftw\ library. 
+    %Specialize the template \fft\ to call \fftw\ when the required type of
+    %transform can be handled by \fftw's API,
+    %eg. single/double precission complex to complex, or single/double
+    %precission real to complex.
+    
     \subsection*{August 2 -- August 8}
-    Implement, test and document, some multi-threading capabilities.
+    Document the library: write a theoretical summary, code reference and examples.
     
     \subsection*{August 9 -- August 15}
     Buffer time before the last evaluation date
     to solve any pending issues.
-   
+    
 %    Proposal Timeline
 % 
 % Before April 20:
