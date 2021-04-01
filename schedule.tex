@@ -4,24 +4,25 @@
     \subsection*{Before June 7}
     Familiarize myself with \boostmath\ library, its coding standards and
     requirements for new utilities.
-    Familiarize myself with \fftw\ library, its API and inner workings.
+    Familiarize myself with \fftw\ library, its \api\ and inner workings.
     Do some research about the state of the art algorithms for computing \fft.
     
     \subsection*{June 7 -- June 13 (Official Coding Time begins)}
-    Define a template API for the library.
-    Prepare a set of tests for correctedness.
-    Prepare a set of benchmarks to test performance against \fftw,
-    \gsl\footnote{\url{www.gnu.org/software/gsl}} and
-    \alglib\footnote{\url{www.alglib.net}}.
-     
+    Define a template \api\ for the library.
+    Start working on a back-end for \fftw\, with support for simple
+    functionality: complex to complex transforms with single and double precision. 
     
     \subsection*{June 14 -- June 20}
     Implement Good-Thomas \fft\ algorithm (see \cite{FFTW05}), the general
     mixed-radix \dft\ and Cooley-Tukey's, the specialization for powers of 2 sizes.
     
     \subsection*{June 21 -- June 27}
-    Implement convolution routines and 
-    real to complex transforms (see \cite{FFTW05,soresen87}).
+    Prepare a set of tests for correctedness.
+    Prepare a set of benchmarks to test the performance of different back-ends.
+    
+    \subsection*{June 21 -- June 27}
+    Implement convolution routines and tests.
+    
     
     \subsection*{June 28 -- July 04}
     Implement Rader's \fft\ algorithm (see \cite{rader68}), the specialization for prime sizes (it
@@ -37,17 +38,20 @@
     to solve any pending issues.
     
     \subsection*{July 12 -- July 18}
-    Explore other algorithms and techniques, for instance \fftw\
-    codelets and Bluestein's \fft\ (see~\cite{bluestein70}).
+    Test the \api\ with other back-ends, for instance
+    \gsl\footnote{\url{www.gnu.org/software/gsl}} and
+    \alglib\footnote{\url{www.alglib.net}}.
     
     \subsection*{July 19 -- July 25}
-    Implement $D$-dimensional \fft\ using the 1-dimensional
-    functionality produced in the previous weeks.
+    Real to complex transforms (see \cite{FFTW05,soresen87}).
+    % Implement $D$-dimensional \fft\ using the 1-dimensional
+    % functionality produced in the previous weeks.
     
     \subsection*{July 26 -- August 1}
-    Implement a simple wrapper for \fftw\ library. 
+    Explore other algorithms and techniques, for instance \fftw\
+    codelets and Bluestein's \fft\ (see~\cite{bluestein70}).
     %Specialize the template \fft\ to call \fftw\ when the required type of
-    %transform can be handled by \fftw's API,
+    %transform can be handled by \fftw's \api,
     %eg. single/double precission complex to complex, or single/double
     %precission real to complex.
     
