@@ -87,7 +87,39 @@ $\Ring = \Complex$,
 Rader's \fft\ \cite{rader68}
 can be used to compute the \dft\ in $\Order(n\log n)$ when $n$ is a prime
 number. Again this algorithm can be templated on the type, since there may be
-innumerable representations of real numbers and complex numbers.
+countless representations of real and complex numbers.
+
+\subsection{Circular Discrete Convolution}
+Rader's \fft\ algorithm takes advantange of the so-called
+\emph{convolution theorem} in order to solve efficiently the \dft\ of prime size, 
+and conversely having \fft\ capabilities allow
+us to compute convolutions faster. Hence we regard as
+inevitable to provide \dft\ and convolutions within the same library.
+Here we will be discussing the \emph{Circular Discrete Convolution} (\cdc)
+because it integrates seamlessly with the \dft\ on tuples of finite size.
+\begin{definition}
+    Given two $n$-tuples in the ring $\Ring$: 
+    $a = (a_0,a_1,\ldots,a_{n-1})$ and $b=(b_0,b_1,\ldots,b_{n-1})$;
+    the \emph{Circular Discrete Convolution} denoted as 
+    $c = a\star b$ is another
+    $n$-tuple such that
+    \begin{equation} 
+        c_k = \sum_{j=0}^{n-1} a_j \cdot b_{(k-j) \mod n}.
+        \label{eq:convolution}
+    \end{equation}
+    \label{def:convolution}
+\end{definition}
+The \emph{Convolution Theorem} states that the \cdc\ of two $n$-tuples $a$ and
+$b$ can be computed as follows
+\begin{equation}
+    c = \dft^{-1}\big( \dft(a) \cdot \dft(b)  \big),
+    \label{eq:conv_theorem}
+\end{equation}
+where the dot operator for two $n$-tuples is understood as the element-wise
+multiplication. This means that the \cdc\ of size $n$ can be computed with the
+same computational complexity of the \dft, $\Order(n\log n)$ if the \fft\
+algorithms are used instead of $\Order(n^2)$ if we use equation
+(\ref{eq:convolution}) directly.
 
 \subsection{\fftw}
 \fftw\ \cite{FFTW05} is the \emph{de facto} library for computing \dft\ in the scientific
