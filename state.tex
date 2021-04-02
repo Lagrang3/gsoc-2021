@@ -44,10 +44,10 @@ instead of $w$ and taking into account and extra $\frac{1}{n}$ factor
 
 \begin{example}
     When we deal with complex numbers $\Ring = \Complex$, an \xroot{n}\ of unity
-    can be constructed as $w = \exp(2 \pi i/n)$, where $i = \sqrt{-1}$.
+    can be constructed as $w = \exp(- 2 \pi i/n)$, where $i = \sqrt{-1}$.
     Then the \dft\ takes the form
     \begin{equation} 
-        b_k = \sum_{j=0}^{n-1} e^{\frac{2\pi i}{n} kj}  a_j,
+        b_k = \sum_{j=0}^{n-1} e^{-\frac{2\pi i}{n} kj}  a_j,
     \end{equation}
     often used in signal processing and physics.
     \label{ex:complex}
@@ -56,8 +56,8 @@ instead of $w$ and taking into account and extra $\frac{1}{n}$ factor
 \begin{example}
    For a given prime number $p$, let $\Integer_p$ be the reduced residue system
    modulo $p$, ie. this set satisfies the ring axioms (in fact it is a finite
-   field which is a sub-class), and let $g$ be a primite root of $p$, ie. in the
-   sense that the least value of $k$ for which $g^k \equiv 1 \pmod p$ is
+   field which is a sub-class), and let $g$ be a primitive root of $p$, ie. in the
+   sense that the least non-zero value of $k$ for which $g^k \equiv 1 \pmod p$ is
    $k=p-1$. Then if $n$ divides $p-1$ we can construct $w = g^{(p-1)/n}$, which
    is an \xroot{n}\ of unity in $\Integer_p$. That said, the \dft\
    (\ref{eq:dft}) with $w = g^{(p-1)/n}$ is known as the \emph{Number-Theoretic
@@ -157,9 +157,10 @@ number representation types: \verb|float| and \verb|double|.
 
 There is another issue worth mentioning, which is that of the scalability of the
 parallel \mpi\ routines for computing $3$-dimensional \dft. As it pointed out in
-\cite{springel_2020,adamek_2016,pippig_13}, \fftw{}s approach to $D$-dimensional
+\cite{springel_2020,adamek_2016,pippig_13}, \fftw's approach to
+$D$-dimensional
 \dft\ consists in the
-decomposition of problem domain along one dimension, having as a consequence that
+decomposition of the problem domain along one dimension, having as a consequence that
 the number $P$ of partecipating \mpi\ processes can grow up to $n$, the side length
 of the domain hypercube, while the memory requirement of the problem grows as
 $\Order(n^D)$. Furthermore, the communication pattern to perform that operation
