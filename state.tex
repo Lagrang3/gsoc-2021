@@ -153,7 +153,8 @@ complex numbers, like in Example \ref{ex:complex}.
 There is no support for \dft{}s in the broader sense of Definition \ref{def:dft}.
 For example, we cannot use \fftw\ to compute the \ntt{}s described in the
 Example \ref{ex:ntt}. Also \dft\ can be computed for a limited number of real
-number representation types: \verb|float| and \verb|double|.
+number representation types: \verb|float|, \verb|double|, \verb|long double|
+and the nonstandard \verb|__float128|.
 
 There is another issue worth mentioning, which is that of the scalability of the
 parallel \mpi\ routines for computing $3$-dimensional \dft. As it pointed out in

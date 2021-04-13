@@ -94,14 +94,25 @@ convolution(InputIterator beg1, InputIterator end1,
 This project proposes to deliver at the end of the \gsoc-2021 a C++ library for
 computing \fft{}s, with the following components:
 \begin{itemize}
-    \item template routines for computing \dft\ using different algorithms,
-    \item template routines for computing convolutions,
-    \item optimized specialization for complex to complex \dft,
-    \item optimized specialization for real to complex \dft,
-    \item a back-end for some \fftw\ routines,
-    \item a simple and flexible user interface that hides implementation details,
-    \item unit tests and benchmarks,
-    \item documentation with examples.
+    \item A template user interface for 1-dimensional \dft.
+    \item A template user interface for computing convolutions.
+    \item A back-end that wraps \fftw\ routines to handle the standard complex types
+    ie. \verb|std::complex| instantiated on \verb|float|,
+    \verb|double| and \verb|long double|.
+    \item A general purpose back-end, based on 
+    templates routines for computing \dft\ using the algorithms
+    mentioned in the previous section based on the weaker notion of rings and
+    roots of unity. 
+    This back-end already provides support for \ntt\ without the need to write
+    specialized routines.
+    \item Specialization for complex to complex \dft, with the use of the \fftw\
+    back-end whenever possible,
+    and tested support for Boost Multiprecision types such as
+    \verb|cpp_complex|.
+    \item Specialization for real to complex \dft, with the use of the \fftw\
+    back-end whenever possible/
+    \item Unit tests and benchmarks.
+    \item Documentation with examples.
     %\item support for $D$-dimensional \dft{}s,
     %\item (if time permits) with multithreaded capabilities.
 \end{itemize}
